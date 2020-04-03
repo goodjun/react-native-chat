@@ -16,13 +16,13 @@ export default class Login extends React.Component {
 
   render() {
     return (
-      <KeyboardAvoidingView style={{flex: 1}}>
+      <KeyboardAvoidingView style={{ flex: 1 }}>
         <View style={styles.container}>
           <Text style={styles.logo}>Chat</Text>
           <View style={styles.inputView}>
             <TextInput
               style={styles.inputText}
-              underlineColorAndroid="#3598DB"
+              keyboardType="numeric"
               selectionColor="#3598DB"
               placeholder="Enter mobile number"
             />
@@ -30,7 +30,6 @@ export default class Login extends React.Component {
           <View style={styles.inputView}>
             <TextInput
               secureTextEntry
-              underlineColorAndroid="#3598DB"
               selectionColor="#3598DB"
               style={styles.inputText}
               placeholder="Enter password"
@@ -58,9 +57,9 @@ const styles = StyleSheet.create({
   },
   logo: {
     fontWeight: 'bold',
-    fontSize: 50,
+    fontSize: 60,
     color: '#3598DB',
-    marginBottom: 40,
+    marginBottom: 60,
   },
   inputView: {
     width: '80%',
@@ -70,9 +69,10 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   inputText: {
-    height: 50,
+    height: 40,
     color: '#000',
-    textDecorationLine: 'underline',
+    borderBottomWidth: 1,
+    borderBottomColor: '#3598DB',
   },
   signup: {
     color: '#333333',

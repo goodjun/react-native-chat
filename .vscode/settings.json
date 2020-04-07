@@ -2,4 +2,7 @@
     "files.associations": {
         "*.js": "javascriptreact"
     },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
 }

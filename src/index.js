@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Login from './screens/login/index'
+import { ChatView } from './screens/chat/index'
 
 export default class HelloWorldApp extends Component {
   render() {
-    return <Login />
+    return <ChatView messages={[]}></ChatView>
   }
 }

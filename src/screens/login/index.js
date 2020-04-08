@@ -1,17 +1,9 @@
-import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  KeyboardAvoidingView,
-  TouchableOpacity,
-  Keyboard,
-} from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View, TextInput, KeyboardAvoidingView, TouchableOpacity, Keyboard } from 'react-native'
 
 export default class Login extends React.Component {
   _onLoginPress() {
-    Keyboard.dismiss();
+    Keyboard.dismiss()
   }
 
   render() {
@@ -28,16 +20,9 @@ export default class Login extends React.Component {
             />
           </View>
           <View style={styles.inputView}>
-            <TextInput
-              secureTextEntry
-              selectionColor="#3598DB"
-              style={styles.inputText}
-              placeholder="Enter password"
-            />
+            <TextInput secureTextEntry selectionColor="#3598DB" style={styles.inputText} placeholder="Enter password" />
           </View>
-          <TouchableOpacity
-            style={styles.loginBtn}
-            onPress={this._onLoginPress}>
+          <TouchableOpacity style={styles.loginBtn} onPress={this._onLoginPress}>
             <Text style={styles.loginText}>LOGIN</Text>
           </TouchableOpacity>
           <TouchableOpacity>
@@ -45,7 +30,7 @@ export default class Login extends React.Component {
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
-    );
+    )
   }
 }
 
@@ -91,4 +76,4 @@ const styles = StyleSheet.create({
   loginText: {
     color: 'white',
   },
-});
+})

@@ -1,17 +1,9 @@
-import React, {Component} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  FlatList,
-  Dimensions,
-  TouchableHighlight,
-  Image,
-} from 'react-native';
+import React, { Component } from 'react'
+import { StyleSheet, Text, View, FlatList, Dimensions, TouchableHighlight, Image } from 'react-native'
 
 export default class Conversation extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       data: [
         {
@@ -33,10 +25,10 @@ export default class Conversation extends Component {
           avatar: require('../../assets/avatar.jpg'),
         },
       ],
-    };
+    }
   }
 
-  _renderRow = ({item, _index}) => (
+  renderRow = ({ item, _index }) => (
     <View>
       <TouchableHighlight>
         <View style={[styles.row, styles.last]}>
@@ -48,19 +40,17 @@ export default class Conversation extends Component {
               </Text>
               <Text style={styles.time}> {item.datetime}</Text>
             </View>
-            <View style={[styles.crow, {marginTop: 3}]}>
+            <View style={[styles.crow, { marginTop: 3 }]}>
               <Text style={styles.desc} numberOfLines={1}>
                 {item.message}
               </Text>
             </View>
           </View>
-          {parseInt(item.unreadCount) > 0 ? (
-            <View style={styles.badge} />
-          ) : null}
+          {parseInt(item.unreadCount) > 0 ? <View style={styles.badge} /> : null}
         </View>
       </TouchableHighlight>
     </View>
-  );
+  )
 
   render() {
     return (
@@ -71,13 +61,13 @@ export default class Conversation extends Component {
           keyExtractor={(_item, index) => index.toString()}
         />
       </View>
-    );
+    )
   }
 }
 
-const {width} = Dimensions.get('window');
-const px = 9;
-const borderWidth = StyleSheet.hairlineWidth;
+const { width } = Dimensions.get('window')
+const px = 9
+const borderWidth = StyleSheet.hairlineWidth
 const styles = StyleSheet.create({
   list: {
     borderTopWidth: borderWidth,
@@ -166,4 +156,4 @@ const styles = StyleSheet.create({
     left: 55,
     top: 7,
   },
-});
+})

@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import TabNavigator from 'react-native-tab-navigator';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import {YellowBox} from 'react-native';
+import React, { Component } from 'react'
+import { StyleSheet, Text, View, YellowBox } from 'react-native'
+import TabNavigator from 'react-native-tab-navigator'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 /**
  * skip warning message
@@ -12,7 +11,7 @@ YellowBox.ignoreWarnings([
   'Warning: componentWillMount is deprecated',
   'Warning: componentWillReceiveProps is deprecated',
   'Module RCTImageLoader requires',
-]);
+])
 
 const tabs = [
   {
@@ -39,33 +38,34 @@ const tabs = [
     icon: 'user',
     selectedIcon: 'user',
   },
-];
+]
 
 export default class Tab extends Component {
   state = {
     selectedTab: 'Chats',
-  };
+  }
+
   render() {
-    let tabViews = tabs.map((tab, i) => {
+    const tabViews = tabs.map((tab, i) => {
       return (
         <TabNavigator.Item
+          key={i}
           title={tab.tabName}
           selected={this.state.selectedTab === tab.tabPage}
-          titleStyle={{color: '#696969'}}
-          selectedTitleStyle={{color: '#3598DB'}}
+          titleStyle={{ color: '#696969' }}
+          selectedTitleStyle={{ color: '#3598DB' }}
           renderIcon={() => <Icon name={tab.icon} size={22} color="#696969" />}
-          renderSelectedIcon={() => (
-            <Icon name={tab.selectedIcon} size={22} color="#3598DB" />
-          )}
-          onPress={() => this.setState({selectedTab: tab.tabPage})}>
+          renderSelectedIcon={() => <Icon name={tab.selectedIcon} size={22} color="#3598DB" />}
+          onPress={() => this.setState({ selectedTab: tab.tabPage })}
+        >
           <View style={styles.container}>
             <Text style={styles.welcome}>{tab.tabPage}</Text>
           </View>
         </TabNavigator.Item>
-      );
-    });
+      )
+    })
 
-    return <TabNavigator style={styles.container}>{tabViews}</TabNavigator>;
+    return <TabNavigator style={styles.container}>{tabViews}</TabNavigator>
   }
 }
 
@@ -85,4 +85,4 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-});
+})
